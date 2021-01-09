@@ -4,15 +4,21 @@ import java.util.*
 
 fun main() {
 
-    var fortune: String
-    for (i in 1..10) {
-        fortune = getFortuneCookie2(getBirthday())
+    var fortune: String = ""
+//    repeat (10) {
+//        fortune = getFortuneCookie3(getBirthday2())
+//        println("\nYour fortune is: $fortune")
+//        if (fortune.contains("Take it easy"))
+//    }
+
+    while(!fortune.contains("Take it easy")) {
+        fortune = getFortuneCookie3(getBirthday2())
         println("\nYour fortune is: $fortune")
-        if (fortune.contains("Take it easy")) break
-    }
 }
 
-fun getFortuneCookie2(birthday: Int): String {
+}
+
+fun getFortuneCookie3(birthday: Int): String {
 
     val fortunes = listOf(
         "You will have a great day!",
@@ -33,7 +39,7 @@ fun getFortuneCookie2(birthday: Int): String {
     return fortunes[index]
 }
 
-fun getBirthday(): Int {
+fun getBirthday2(): Int {
     print("\nEnter your birthday: ")
     return readLine()?.toIntOrNull() ?: 1
 }
