@@ -8,7 +8,9 @@ object MobyDickWhale {
 enum class Color(val rgb: Int) {
     RED(0XFF0000),
     GREEN(0X00FF00),
-    BLUE(0X0000FF)
+    BLUE(0X0000FF),
+    YELLOW(0xFFFF00),
+    BROWN(0xA52A2A)
 }
 
 sealed class Seal

@@ -1,8 +1,8 @@
 package classes
 
-
-
-abstract class FoodSpice(val name: String, private val spiciness: String = "mild", private val spiceColor: SpiceColor) : SpiceColor by spiceColor {
+abstract class FoodSpice(val name: String,
+                         private val spiciness: String = "mild",
+                         private val spiceColor: SpiceColor) : SpiceColor by spiceColor {
 
     val heat: Int
         get() {
@@ -23,18 +23,19 @@ interface Grinder {
 }
 
 interface SpiceColor {
-    val color: String
+    val color: Color
 }
 
 object YellowSpice : SpiceColor {
-    override val color = "yellow"
+    override val color = Color.YELLOW
 }
 
 object BrownSpice : SpiceColor {
-    override val color = "brown"
+    override val color = Color.BROWN
 }
 
-class Curry(name: String, spiciness: String, color: SpiceColor = YellowSpice) : FoodSpice(name, spiciness, color), Grinder {
+class Curry(name: String, spiciness: String, color: SpiceColor = YellowSpice) :
+    FoodSpice(name, spiciness, color), Grinder {
 
     override fun prepareSpice() {
         grind()
@@ -44,7 +45,8 @@ class Curry(name: String, spiciness: String, color: SpiceColor = YellowSpice) : 
     }
 }
 
-class Pepper(name: String, spiciness: String, color: SpiceColor = BrownSpice) : FoodSpice(name, spiciness, color), Grinder {
+class Pepper(name: String, spiciness: String, color: SpiceColor = BrownSpice) :
+    FoodSpice(name, spiciness, color), Grinder {
     override fun prepareSpice() {
         grind()
     }
