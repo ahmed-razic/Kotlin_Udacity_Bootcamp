@@ -2,7 +2,9 @@ package classes
 
 fun main() {
     //buildAquarium()
-    fishExample()
+    //fishExample()
+    makeFish()
+
 }
 
 fun buildAquarium() {
@@ -36,3 +38,29 @@ fun fishExample() {
     val fish2 = Fish()
     println("Is the fish friendly? ${fish2.friendly}. It needs volume: ${fish2.size}")
 }
+
+fun makeFish() {
+    val shark = Shark()
+    val pleco = Plecostomus()
+    val shark2 = Shark2()
+
+    println("Shark: ${shark.color} \nPlecostomus: ${pleco.color}")
+
+    shark.eat()
+    pleco.eat()
+
+
+
+    feedFish(shark)
+    feedFish(shark2)
+
+}
+
+fun feedFish(fish: FishAction) {
+    fish.eat()
+}
+
+class Shark2 : Shark(){
+
+}
+
