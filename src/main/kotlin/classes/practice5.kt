@@ -30,8 +30,21 @@ object YellowSpice : SpiceColor {
     override val color = "yellow"
 }
 
+object BrownSpice : SpiceColor {
+    override val color = "brown"
+}
+
 class Curry(name: String, spiciness: String, color: SpiceColor = YellowSpice) : FoodSpice(name, spiciness, color), Grinder {
 
+    override fun prepareSpice() {
+        grind()
+    }
+
+    override fun grind() {
+    }
+}
+
+class Pepper(name: String, spiciness: String, color: SpiceColor = BrownSpice) : FoodSpice(name, spiciness, color), Grinder {
     override fun prepareSpice() {
         grind()
     }
